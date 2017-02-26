@@ -1,8 +1,10 @@
 package com.example.saibharath.a1;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -53,4 +55,12 @@ public class MainActivity extends AppCompatActivity {
         Log.d(this.getLocalClassName(),"Activity got restarted");
     }
 
+
+    public void addService(View view){
+        startService(new Intent(getBaseContext(),MyService.class));
+    }
+
+    public void stopService(View view){
+        stopService(new Intent(getBaseContext(), MyService.class));
+    }
 }
